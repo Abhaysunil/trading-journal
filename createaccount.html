@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Trading Account - Trading Journal AI</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2bcdee",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#101f22",
+                        "surface-dark": "#192f33",
+                        "border-dark": "#325e67",
+                        "text-muted": "#92c0c9"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>/* Custom scrollbar for a premium feel */
+::-webkit-scrollbar {
+    width: 8px
+    }
+::-webkit-scrollbar-track {
+    background: #111f22
+    }
+::-webkit-scrollbar-thumb {
+    background: #234248;
+    border-radius: 4px
+    }
+/* Select arrow customization */
+select {
+    appearance: none;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDtgpbq3IosY_696PT8ziVZx21mEC13kuCO3obw6ksvdjN88WKGIvq37XLEgTkFvzsTw0HdDOJfDnnU40CDCsGBB-KBhcaOIhSKiEFGu49EqEmiJ-PDpOVLKxxypPi3LHETt9q_w_4wxdISeGHgM9Kf8TQFqODu_t4puHtaXapiFsgUlWSBCb7pdEJSxEEGwKZaCx2OgW2QFyjYpDSZ_uspXKWW8ON9bQeEvbop8fn3EIsclg8DxPBS0DbZ8L2HV0mhzs_Zv1kkots);
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem
+    }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-x-hidden min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#234248] px-10 py-4 bg-background-dark z-20 sticky top-0">
+<div class="flex items-center gap-4 text-white">
+<div class="size-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">candlestick_chart</span>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Trading Journal AI</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Journal</a>
+<a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Analytics</a>
+<a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Settings</a>
+</nav>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-opacity-90 transition-all text-background-dark text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">New Entry</span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border border-[#234248]" data-alt="User profile avatar showing a professional person" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCDKUlJvlzy8JZKUHqwYRuygPGtNAUCvOfNuoDGaKjd8Wf6U6L3956e3pqErAoipljiCiRhvojng0kEbcECCwnfS-Xn8dS6fD-15fGFHYahHw9smoy0TwG8A2VlEG7BqMS3mshjAjTWPAEcDg6G7-Xf1YTaKdajFeDeTcs7jXU_8DHSw5ah3JaH9D7b3WaOoDo6A_ul-OczvpTqsab9ioGkdC7hb10AlyWtx02LqKxq3izTRzgwUo6vZSYe6SNe9H88scMOTJ2Fm_I");'></div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col items-center py-10 px-4 sm:px-10">
+<div class="w-full max-w-[800px] flex flex-col gap-8">
+<!-- Page Heading -->
+<div class="flex flex-col gap-2 pb-4 border-b border-[#234248]">
+<div class="flex items-center gap-3">
+<a class="text-text-muted hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">arrow_back</span>
+</a>
+<h1 class="text-white tracking-tight text-3xl font-bold leading-tight">Add New Trading Account</h1>
+</div>
+<p class="text-text-muted text-base font-normal pl-9">Connect your portfolio details to start journaling and AI analysis.</p>
+</div>
+<!-- Form Container -->
+<form class="flex flex-col gap-8">
+<!-- Section 1: General Details -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<label class="flex flex-col gap-2">
+<span class="text-white text-sm font-medium">Account Alias / Name</span>
+<div class="relative">
+<input class="w-full rounded-lg text-white focus:outline-none focus:ring-1 focus:ring-primary border border-border-dark bg-surface-dark focus:border-primary h-12 placeholder:text-text-muted px-4 text-base transition-all" placeholder="e.g., Main Scalping Acct" type="text"/>
+</div>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-white text-sm font-medium">Broker / Prop Firm</span>
+<div class="relative">
+<input class="w-full rounded-lg text-white focus:outline-none focus:ring-1 focus:ring-primary border border-border-dark bg-surface-dark focus:border-primary h-12 placeholder:text-text-muted px-4 text-base transition-all" placeholder="e.g., FTMO, IC Markets" type="text"/>
+</div>
+</label>
+</div>
+<!-- Section 2: Market & Currency -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<label class="flex flex-col gap-2 md:col-span-2">
+<span class="text-white text-sm font-medium">Market Segment</span>
+<select class="w-full rounded-lg text-white focus:outline-none focus:ring-1 focus:ring-primary border border-border-dark bg-surface-dark focus:border-primary h-12 px-4 text-base transition-all cursor-pointer">
+<option disabled="" selected="" value="">Select Market Segment</option>
+<option value="forex">Forex (Foreign Exchange)</option>
+<option value="crypto">Cryptocurrency</option>
+<option value="indices">Indices &amp; Commodities</option>
+<option value="stocks">Stocks / Equities</option>
+<option value="futures">Futures</option>
+</select>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-white text-sm font-medium">Currency</span>
+<select class="w-full rounded-lg text-white focus:outline-none focus:ring-1 focus:ring-primary border border-border-dark bg-surface-dark focus:border-primary h-12 px-4 text-base transition-all cursor-pointer">
+<option selected="" value="USD">USD ($)</option>
+<option value="EUR">EUR (€)</option>
+<option value="GBP">GBP (£)</option>
+<option value="JPY">JPY (¥)</option>
+<option value="AUD">AUD ($)</option>
+<option value="CAD">CAD ($)</option>
+</select>
+</label>
+</div>
+<!-- Section 3: Financials -->
+<div class="grid grid-cols-1 gap-6">
+<label class="flex flex-col gap-2">
+<span class="text-white text-sm font-medium">Initial Balance / Deposit</span>
+<div class="relative group">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-text-muted group-focus-within:text-primary material-symbols-outlined">attach_money</span>
+<input class="w-full rounded-lg text-white focus:outline-none focus:ring-1 focus:ring-primary border border-border-dark bg-surface-dark focus:border-primary h-12 placeholder:text-text-muted pl-12 pr-4 text-base transition-all" placeholder="0.00" type="number"/>
+</div>
+</label>
+</div>
+<!-- Section 4: Account Type (Radio Cards) -->
+<div class="flex flex-col gap-3">
+<span class="text-white text-sm font-medium">Account Type</span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Option 1: Live -->
+<label class="relative cursor-pointer group">
+<input checked="" class="peer sr-only" name="account_type" type="radio" value="live"/>
+<div class="flex flex-col p-4 rounded-lg border border-border-dark bg-surface-dark peer-checked:border-primary peer-checked:bg-primary/10 transition-all hover:border-text-muted/50 h-full">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+<div class="w-4 h-4 rounded-full border border-text-muted peer-checked:border-primary peer-checked:bg-primary"></div>
+</div>
+<span class="text-white font-semibold">Live Account</span>
+<span class="text-text-muted text-xs mt-1">Real money trading</span>
+</div>
+</label>
+<!-- Option 2: Demo -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="account_type" type="radio" value="demo"/>
+<div class="flex flex-col p-4 rounded-lg border border-border-dark bg-surface-dark peer-checked:border-primary peer-checked:bg-primary/10 transition-all hover:border-text-muted/50 h-full">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary">science</span>
+<div class="w-4 h-4 rounded-full border border-text-muted peer-checked:border-primary peer-checked:bg-primary"></div>
+</div>
+<span class="text-white font-semibold">Demo / Paper</span>
+<span class="text-text-muted text-xs mt-1">Practice environment</span>
+</div>
+</label>
+<!-- Option 3: Funded -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="account_type" type="radio" value="funded"/>
+<div class="flex flex-col p-4 rounded-lg border border-border-dark bg-surface-dark peer-checked:border-primary peer-checked:bg-primary/10 transition-all hover:border-text-muted/50 h-full">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary">trophy</span>
+<div class="w-4 h-4 rounded-full border border-text-muted peer-checked:border-primary peer-checked:bg-primary"></div>
+</div>
+<span class="text-white font-semibold">Funded Account</span>
+<span class="text-text-muted text-xs mt-1">Prop firm capital</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Section 5: Risk Profile (Optional) -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="text-white text-sm font-medium">Risk Profile <span class="text-text-muted font-normal text-xs ml-1">(Optional)</span></span>
+<span class="material-symbols-outlined text-text-muted text-sm cursor-help" title="Helps AI tailor suggestions">info</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<label class="cursor-pointer">
+<input class="peer sr-only" name="risk_profile" type="radio" value="conservative"/>
+<span class="inline-flex items-center px-4 py-2 rounded-full border border-border-dark bg-surface-dark text-text-muted text-sm font-medium hover:text-white peer-checked:bg-primary/20 peer-checked:text-primary peer-checked:border-primary transition-all">
+                                Conservative
+                            </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="risk_profile" type="radio" value="balanced"/>
+<span class="inline-flex items-center px-4 py-2 rounded-full border border-border-dark bg-surface-dark text-text-muted text-sm font-medium hover:text-white peer-checked:bg-primary/20 peer-checked:text-primary peer-checked:border-primary transition-all">
+                                Balanced
+                            </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="risk_profile" type="radio" value="aggressive"/>
+<span class="inline-flex items-center px-4 py-2 rounded-full border border-border-dark bg-surface-dark text-text-muted text-sm font-medium hover:text-white peer-checked:bg-primary/20 peer-checked:text-primary peer-checked:border-primary transition-all">
+                                Aggressive
+                            </span>
+</label>
+</div>
+</div>
+<!-- Form Actions -->
+<div class="flex items-center justify-end gap-4 pt-4 border-t border-[#234248] mt-4">
+<button class="px-6 py-2.5 rounded-lg text-white font-medium hover:bg-[#234248] transition-colors text-sm" type="button">
+                        Cancel
+                    </button>
+<button class="px-8 py-2.5 rounded-lg bg-primary hover:bg-[#5cdbf5] text-background-dark font-bold text-sm shadow-[0_0_15px_rgba(43,205,238,0.3)] transition-all transform active:scale-95 flex items-center gap-2" type="submit">
+<span class="material-symbols-outlined text-lg">check</span>
+                        Create Account
+                    </button>
+</div>
+</form>
+</div>
+</main>
+</body></html>
